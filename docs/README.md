@@ -101,7 +101,6 @@ end note
 stop
 @enduml
 
-```mermaid
 sequenceDiagram
     participant Student
     participant System
@@ -115,4 +114,3 @@ sequenceDiagram
     
     System->>Student: Creates a new account for the user
     Student->>System: Receives confirmation about successful registration
-```
