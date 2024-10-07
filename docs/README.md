@@ -101,3 +101,18 @@ end note
 stop
 @enduml
 
+```mermaid
+sequenceDiagram
+    participant Student
+    participant System
+
+    Student->>System: Goes to the registration page
+    Student->>System: Indicates the type of user - Student
+    Student->>System: Enters registration data (name, email, password, phone number)
+    
+    System->>System: Checks for correctness of entered data
+    Note right of System: Possible USER.REGISTRATION_ERROR
+    
+    System->>Student: Creates a new account for the user
+    Student->>System: Receives confirmation about successful registration
+```
