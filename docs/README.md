@@ -83,3 +83,25 @@ sequenceDiagram
         Tutor->>User: Tutor replies to message
     end
 ```
+
+
+```mermaid
+
+%%{init: {'theme': 'default'}}%%
+graph TD
+    A[Student] -->|Search Tutor| B[Search Tutors]
+    A -->|Contact Tutor| C[Contact Tutor]
+    A -->|View Tutor Profile| D[View Tutor Profile]
+    
+    E[Tutor] -->|View Student Requests| F[View Requests]
+    E -->|Respond to Student| G[Respond to Student]
+    E -->|Manage Profile| H[Manage Tutor Profile]
+    
+    I[Admin] -->|Manage Users| J[Manage Students]
+    I -->|Manage Tutors| K[Manage Tutors]
+    I -->|View Reports| L[View Reports]
+    
+    style A fill:#ffccff,stroke:#333,stroke-width:2px;
+    style E fill:#ccffcc,stroke:#333,stroke-width:2px;
+    style I fill:#ccccff,stroke:#333,stroke-width:2px;
+```
