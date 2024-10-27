@@ -132,11 +132,11 @@ sequenceDiagram
     ClientApp->>AuthService: Submit Registration Data
     AuthService->>Database: Check if User Exists
     alt User Exists
-        AuthService->>ClientApp: User Already Registered
+        AuthService->>ClientApp: HTTP 400 Bad Request (User Already Registered)
     else New User
         AuthService->>Database: Save New User Data
         Database-->>AuthService: User Saved
-        AuthService->>ClientApp: Registration Successful
+        AuthService->>ClientApp: HTTP 201 Created (Registration Successful)
     end
     ClientApp->>User: Display Registration Status
 ```
