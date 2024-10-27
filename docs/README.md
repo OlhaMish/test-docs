@@ -101,6 +101,7 @@ end note
 stop
 @enduml
 
+```mermaid
 sequenceDiagram
     participant Student
     participant System
@@ -114,3 +115,18 @@ sequenceDiagram
     
     System->>Student: Creates a new account for the user
     Student->>System: Receives confirmation about successful registration
+```
+
+```mermaid
+sequenceDiagram
+    participant dotcom
+    participant iframe
+    participant viewscreen
+    dotcom->>iframe: loads html w/ iframe url
+    iframe->>viewscreen: request template
+    viewscreen->>iframe: html & javascript
+    iframe->>dotcom: iframe ready
+    dotcom->>iframe: set mermaid data on iframe
+    iframe->>iframe: render mermaid
+```
+
