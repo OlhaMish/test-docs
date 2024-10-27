@@ -101,6 +101,9 @@ end note
 stop
 @enduml
 
+
+#### Student Registration
+
 ```mermaid
 sequenceDiagram
     participant Student
@@ -117,16 +120,23 @@ sequenceDiagram
     Student->>System: Receives confirmation about successful registration
 ```
 
+
 ```mermaid
 sequenceDiagram
-    participant dotcom
-    participant iframe
-    participant viewscreen
-    dotcom->>iframe: loads html w/ iframe url
-    iframe->>viewscreen: request template
-    viewscreen->>iframe: html & javascript
-    iframe->>dotcom: iframe ready
-    dotcom->>iframe: set mermaid data on iframe
-    iframe->>iframe: render mermaid
-```
+    participant User
+    participant ClientApp
+    participant AuthService
+    participant Database
 
+    User->>ClientApp: Fill Registration Form
+    ClientApp->>AuthService: Submit Registration Data
+    AuthService->>Database: Check if User Exists
+    alt User Exists
+        AuthService->>ClientApp: User Already Registered
+    else New User
+        AuthService->>Database: Save New User Data
+        Database-->>AuthService: User Saved
+        AuthService->>ClientApp: Registration Successful
+    end
+    ClientApp->>User: Display Registration Status
+```
